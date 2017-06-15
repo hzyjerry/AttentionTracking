@@ -1,0 +1,55 @@
+# AMT Pipeline for Human Attention Tracking
+# Author: Zhiyang He
+# EE 267 Final Project
+
+
+###
+#	Local Set Up
+###
+
+  This section provides instruction for setting up the app 
+  and accessing it using mobile phone. The entire set up 
+  should take less than 5 minutes.
+
+  The entry point of the project is index.js. One can start 
+  up the server by going into the project folder and 
+  executing ‘node index.js’. 
+
+  The Nodejs app will start running on localhost at port 5000. 
+  After this step, two entry points will be created: 
+  	(1) localhost:5000/vr: used for participants to explore 
+  		the environment
+  	(2) localhost:5000/visualize: used for researchers to 
+  		examine visual attention in real time. 
+
+  Note that entry point (1) fetches IMU data provided by mobile 
+  browser. if the app is run it inside computer browser, an 
+  exception will be raised saying no compass is detected. 
+
+  In order to use mobile device to access the same entry point, 
+  one need to make sure that the computer and mobile device are 
+  in the same network in this scenario. One can simply access 
+  the web app by typing in compterIP:5000/vr on mobile web 
+  browser. The computerIP can be found by running ‘ipconfig’, 
+  or by executing the following command inside node command 
+  line tool 
+
+  	Terminal>> npm install ip
+  	Terminal>> node
+  	Node>> var ip = require(‘ip’);
+	Node>> console.dir(ip.address());
+
+
+###
+#	AMT Set Up Guideline (source code not included)
+###
+
+  To set up and deploy the app on Amazon Mechanical Turk, 
+  one needs to follow the AMT manual to set up HIT jobs, 
+  task specifications and task prices. In order for Mechanical 
+  Turkers to understand the task, one also needs to provide an 
+  UI with task specification using HITLayout, and a way for 
+  Turkers to access the web app on their mobile phone. To 
+  increase flexibility, this UI is not included inside the 
+  source code. A potential pipeline is discussed in detail in 
+  the paper.
